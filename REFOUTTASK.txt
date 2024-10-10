@@ -1,0 +1,35 @@
+namespace refouttask
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 4;
+            int[] array = {1,2,3,4};
+            deyis(ref array, ref n);
+            for(int i = 0; i < n; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+        
+        }
+        static void deyis( ref int[]array,ref int n)
+        {
+            Console.WriteLine("yeni olcunu daxil et");
+            int s=int .Parse(Console.ReadLine());
+            if (s < n)
+            {
+                Console.WriteLine("daxil etdiyiniz olcu indiki olcuden kicikdir");
+                return;
+            }
+            int[] array2=new int [s];
+            for(int i = 0; i < n; i++)
+            {
+                array2[i] = array[i];
+            }
+            array=array2;
+            n = s;
+        }
+     
+    }
+}
